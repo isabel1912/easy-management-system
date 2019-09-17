@@ -89,3 +89,4 @@ npm run build
 
 Copyright (c) 2016-present, TalkingData
 # -demo
+# easy-management-system
