@@ -16,14 +16,13 @@ iView Admin
 [![npm](https://img.shields.io/npm/l/express.svg)]()
 
 ## Introduction
-
-iView Admin is a front-end management background integration solution. It based on [Vue.js](https://github.com/vuejs/vue) and use the UI Toolkit [iView](https://github.com/iview/iview).
-
-- [Document](https://lison16.github.io/iview-admin-doc/)
-- [Preview](https://admin.iviewui.com/)
-- [Base template recommends using](https://github.com/iview/iview-admin/tree/template)
-
-![image](https://file.iviewui.com/admin-dist/admin-preview.png)
+基于iview-admin-master开发的简单后台系统
+功能包括：
+- 用户管理
+- 系统权限
+- 产品管理
+- 产品详情
+- 历史记录
 
 ## Features
 
@@ -70,7 +69,7 @@ iView Admin is a front-end management background integration solution. It based 
 ## Getting started
 ```bush
 # clone the project
-git clone https://github.com/iview/iview-admin.git
+git clone https://github.com/isabel1912/easy-management-system.git
 
 // install dependencies
 npm install
@@ -88,6 +87,4 @@ npm run build
 [MIT](http://opensource.org/licenses/MIT)
 
 Copyright (c) 2016-present, TalkingData
-# -demo
-# easy-management-system
 # easy-management-system
