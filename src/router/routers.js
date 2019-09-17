@@ -486,5 +486,55 @@ export default [
       hideInMenu: true
     },
     component: () => import('@/view/error-page/404.vue')
+  },
+  {
+    path: '/pages',
+    name: 'pages',
+    meta: {
+      title: '系统功能'
+    },
+    component: Main,
+    children: [
+      {
+        path: 'manage-users',
+        name: '用户管理',
+        meta: {
+          title: '用户管理'
+        },
+        component: () => import('@/view/pages/manage-users.vue')
+      },
+      {
+        path: 'product',
+        name: '产品管理',
+        meta: {
+          title: '产品管理'
+        },
+        component: () => import('@/view/pages/product.vue')
+      },
+      {
+        path: 'product-details',
+        name: '产品详情',
+        meta: {
+          title: '产品详情'
+        },
+        component: () => import('@/view/pages/product-details.vue')
+      },
+      {
+        path: 'history',
+        name: '历史记录',
+        meta: {
+          title: '历史记录'
+        },
+        component: () => import('@/view/pages/history.vue')
+      },
+      {
+        path: 'role',
+        name: '权限设置',
+        meta: {
+          title: '权限设置'
+        },
+        component: () => import('@/view/pages/role.vue')
+      }
+    ]
   }
 ]
