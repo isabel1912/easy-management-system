@@ -40,8 +40,33 @@ export default {
           key: 'action',
           width: 150,
           align: 'center',
-          render (row, column, index) {
-            return `<i-button type="primary">查看</i-button> <i-button type="error">删除</i-button>`
+          render: (h, params) => {
+            return h('div', [
+              h('Button', {
+                props: {
+                  type: 'primary'
+                },
+                style: {
+                  marginRight: '2px'
+                },
+                on: {
+                  click: () => {
+                    this.show(params.index)
+                  }
+                }
+              }, '查看'),
+              h('Button', {
+                props: {
+                  type: 'error'
+                },
+                on: {
+                  click: () => {
+                    this.remove(params.index)
+                  }
+                }
+              }, '删除'),
+              h('span', this.userStatus(params.row.status))
+            ])
           }
         }
       ]
@@ -53,6 +78,13 @@ export default {
       console.log(data)
       this.datalist = data['0'].page.list
     })
+  },
+  methods: {
+    userStatus (val) {
+      if (val === 1) {
+        return '正常'
+      }
+    }
   }
 }
 </script>
