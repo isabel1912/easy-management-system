@@ -56,3 +56,10 @@ export const getProductData = () => {
     method: 'get'
   })
 }
+
+export const getUserlistData = () => {
+  return axios.request({
+    url: 'get_userlist_data',
+    method: 'get'
+  })
+}

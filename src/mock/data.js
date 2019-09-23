@@ -3,6 +3,8 @@ import { doCustomTimes } from '@/libs/util'
 import orgData from './data/org-data'
 import { treeData } from './data/tree-select'
 import { productData } from './data/product-data'
+import { userlistData } from './data/userlist-data'
+
 const Random = Mock.Random
 
 export const getTableData = req => {
@@ -42,4 +44,8 @@ export const getTreeSelectData = req => {
 
 export const getProductData = req => {
   return productData
+}
+
+export const getUserlistData = req => {
+  return userlistData
 }
