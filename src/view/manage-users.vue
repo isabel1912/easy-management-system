@@ -5,7 +5,7 @@
 </template>
 <script>
 import { getUserlistData } from '@/api/data'
-
+import axios from 'axios'
 export default {
   data () {
     return {
@@ -29,7 +29,12 @@ export default {
         },
         {
           title: '状态',
-          key: 'status'
+          key: 'status',
+          render: (h, params) => {
+            return h('div', [
+              h('span', this.userStatus(params.row.status))
+            ])
+          }
         },
         {
           title: '创建时间',
@@ -64,18 +69,19 @@ export default {
                     this.remove(params.index)
                   }
                 }
-              }, '删除'),
-              h('span', this.userStatus(params.row.status))
+              }, '删除')
             ])
           }
         }
-      ]
+      ],
+      listQuery: {
+        id: 1
+      }
     }
   },
   mounted () {
     getUserlistData().then(res => {
       const { data } = res
-      console.log(data)
       this.datalist = data['0'].page.list
     })
   },
@@ -84,6 +90,16 @@ export default {
       if (val === 1) {
         return '正常'
       }
+    },
+    remove () {
+      // api就是你线上的网址
+      axios.get('/api/user/remove', this.listQuery).then((res) => {
+        if (res && res.status === 200) {
+          console.log(res.data)
+        }
+      }).catch((err) => {
+        console.log(err)
+      })
     }
   }
 }
